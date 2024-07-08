@@ -13,9 +13,7 @@ env:
 
 # Sets permissions of the GITHUB_TOKEN to allow deployment to GitHub Pages
 permissions:
-  contents: read
-  pages: write
-  id-token: write
+  contents: write
 
 # Allow only one concurrent deployment, skipping runs queued between the run in-progress and latest queued.
 # However, do NOT cancel in-progress runs as we want to allow these production deployments to complete.
@@ -29,8 +27,6 @@ jobs:
       name: github-pages
       url: ${{ steps.deployment.outputs.page_url }}
     runs-on: ubuntu-latest
-    permissions:
-      contents: write
     steps:
       - uses: actions/checkout@v4
       # -=-=-=-= Rustdocs =-=-=-=-
@@ -50,8 +46,6 @@ jobs:
       # -=-=-=-= Preparation =-=-=-=-
       - name: Prepare web files
         run: mv ./target/doc/ ./web/rustdocs/ && mv ./output/html/ ./web/strictdoc/
-      - name: Prepare landing page
-        run: echo "todo"
 
       # -=-=-=-= Deploy =-=-=-=-
       - name: Deploy to Github Pages
