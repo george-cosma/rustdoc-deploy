@@ -47,7 +47,7 @@ jobs:
 
       # -=-=-=-= Preparation =-=-=-=-
       - name: Prepare web files
-        run: mkdir web && mv ./target/doc/ ./web/rustdocs/ && mv ./output/html/ ./web/strictdoc/
+        run: mv ./target/doc/ ./web/rustdocs/ && mv ./output/html/ ./web/strictdoc/
       - name: Prepare landing page
         run: echo "todo"
 
