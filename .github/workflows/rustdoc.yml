@@ -31,8 +31,27 @@ jobs:
     runs-on: ubuntu-latest
     steps:
       - uses: actions/checkout@v4
-      - name: Build
+      # -=-=-=-= Rustdocs =-=-=-=-
+      - name: Build rustdocs
         run: cargo doc
+
+      # -=-=-=-= Strictdoc =-=-=-=-
+      - name: Install python
+        uses: actions/setup-python@v5.1.0
+        with:
+          python-version: 3.12
+      - name: Install strictdoc
+        run: pip install strictdoc
+      - name: Export requirements
+        run: strictdoc export ./requirements/requirements.sdoc
+
+      # -=-=-=-= Preparation =-=-=-=-
+      - name: Prepare web files
+        run: mkdir web && mv ./target/doc/ ./web/rustdocs/ && mv ./requirements/output/html/ ./web/strictdoc/
+      - name: Prepare landing page
+        run: echo "todo"
+
+      # -=-=-=-= Deploy =-=-=-=-
       - name: Setup Pages
         uses: actions/configure-pages@v5
       - name: Upload artifact
