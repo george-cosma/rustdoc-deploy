@@ -40,14 +40,14 @@ jobs:
         uses: actions/setup-python@v5.1.0
         with:
           python-version: 3.12
-      - name: Install strictdoc
-        run: pip install strictdoc
+      - name: Install strictdoc & requirements
+        run: pip install strictdoc setuptools # Note: we need setuptools for strictdoc to work. Installing just strictdoc is not enough
       - name: Export requirements
         run: strictdoc export ./requirements/requirements.sdoc
 
       # -=-=-=-= Preparation =-=-=-=-
       - name: Prepare web files
-        run: mkdir web && mv ./target/doc/ ./web/rustdocs/ && mv ./requirements/output/html/ ./web/strictdoc/
+        run: mkdir web && mv ./target/doc/ ./web/rustdocs/ && mv ./output/html/ ./web/strictdoc/
       - name: Prepare landing page
         run: echo "todo"
 
