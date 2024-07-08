@@ -42,7 +42,6 @@ jobs:
         uses: actions/setup-python@v5.1.0
         with:
           python-version: 3.12
-          cache: 'pip' # caching pip dependencies
       - name: Install strictdoc & requirements
         run: pip install strictdoc setuptools # Note: we need setuptools for strictdoc to work. Installing just strictdoc is not enough
       - name: Export requirements
