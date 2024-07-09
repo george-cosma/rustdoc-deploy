@@ -45,7 +45,7 @@ jobs:
 
       # -=-=-=-= Preparation =-=-=-=-
       - name: Prepare web files
-        run: mkdir web && mv ./target/doc/ ./web/rustdocs/ && mv ./output/html/ ./web/strictdoc/
+        run: mkdir -p web && mv ./target/doc/ ./web/rustdocs/ && mv ./output/html/ ./web/strictdoc/
 
       # -=-=-=-= Deploy =-=-=-=-
       - name: Deploy to Github Pages
