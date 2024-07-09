@@ -55,3 +55,4 @@ jobs:
           # Build output to publish to the `gh-pages` branch:
           publish_dir: ./web
           publish_branch: gh-pages
+          destination_dir: ./main/
