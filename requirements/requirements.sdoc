@@ -18,10 +18,10 @@ The code shall be clean becaue XYZ
 UID: REQ-3
 TITLE: Requirement 3
 STATEMENT: >>>
-The code shall be made from pure magic
+The code shall be made from pure, good magic
 <<<
 RATIONALE: >>>
-The code shall be made from pure magic because XYZ
+The code shall be made from pure magic because XYZ and ABC. The magic must be good!!!
 <<<
 
 [REQUIREMENT]
